@@ -1,4 +1,26 @@
 require('dotenv').config();
-const fbPoster = require('./services/facebookPost.service');
+const express = require('express');
+const app = express();
+const ejs = require('ejs');
+const axios = require('axios');
 
-fbPoster.makePost({ "message": "Testing with api!", url: "https://apod.nasa.gov/apod/image/2111/NGC3314_HubbleOstling_2014.jpg" });
+const APOD_API_KEY = process.env.APOD_API_KEY;
+
+app.set('views', './views');
+app.set('view engine', 'ejs');
+
+app.listen(process.env.port || 8000);
+
+app.get('/apod',  (req, res) => {
+     axios.get(`https://api.nasa.gov/planetary/apod?api_key=${APOD_API_KEY}`)
+     .then(data =>{
+        res.render('apod.ejs', {data});
+     })
+   
+})
+
+app.use(express.static("./static/"));
+
+
+
+

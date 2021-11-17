@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<style>
+    body {
+        background: #0F2027;
+        background: -webkit-linear-gradient(to right, #041a24, #081e25, #0f1e24);
+        background: linear-gradient(to right, #023a49,rgb(4, 72, 99),  #000e14);
+     
+
+    }
+
+
+    .api-logo-image {
+        height: 175px;
+        width: auto;
+    }
+
+    .logo-container {
+        float: left;
+    }
+
+
+    .description-container {
+        color: white;
+        font-size: xx-large;
+        text-align: center;
+
+
+    }
+
+    .description-container div h4 {
+        display: inline-block;
+        padding: 10px;
+        border: 2px solid #fff;
+        margin-bottom: 0%;
+    }
+
+
+
+
+
+    .apod-container img {
+        display: block;
+        margin: auto;
+        height: 600px;
+    }
+
+    .iutfis-logo-container{
+        float: right;
+        border: 2px solid #fff;
+        padding: 10px;
+        margin-bottom: 30px;
+    }
+</style>
+
+<body>
+    <div class="container">
+        <div class="api-logo">
+            <div class="logo-container">
+                <img class="api-logo-image" src="/nasa.png">
+            </div>
+            <div class="logo-container">
+                <img class="api-logo-image" src="/ApodED.png">
+            </div>
+
+        </div>
+        <div style="clear: both;"></div>
+        <div class="apod-container">
+            <img src="<%= data.data.hdurl%>" alt="">
+        </div>
+        <div class="description-container">
+            <div>
+                <h4><%= data.data.title%></h4>
+            </div>
+
+            <div>
+                <p style="text-align: center;"><%= data.data.explanation%></p>
+
+            </div>
+
+        </div>
+        <div class="iutfis-logo-container">
+            <img style="height: 100px;" src="/iutfis.png" alt="">
+        </div>
+       
+    </div>
+
+
+</body>
