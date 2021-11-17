@@ -22,7 +22,7 @@ app.get('/apod',  (req, res) => {
    
 })
 
-app.get('/publish',()=>{
+app.get('/fb-publish',()=>{
     fbPoster.makePost({
         message: "APOD",
         url:`https://api.apiflash.com/v1/urltoimage?access_key=${FLASH_API_KEY}&full_page=true&url=https://iutfis-apod.herokuapp.com/apod`   });
