@@ -14,5 +14,8 @@
     "ejs": "^3.1.6",
     "express": "^4.17.1",
     "fb": "^2.0.0"
+  },
+  "devDependencies": {
+    "@types/fb": "0.0.28"
   }
 }
